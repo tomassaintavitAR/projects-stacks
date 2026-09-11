@@ -27,35 +27,35 @@ API REST (FastAPI en Render)
 PostgreSQL (Supabase / local via docker-compose)
 ```
 
-## Ejecutar la API en local
+## Ejecutar el sistema en local (docker-compose)
 
-1. Levantar PostgreSQL (docker):
+Levanta todo el stack (PostgreSQL + API + frontend):
 
-   ```bash
-   docker compose up -d db
-   ```
+```bash
+docker compose up -d
+```
 
-2. Instalar dependencias:
+- **Frontend:** http://localhost:8080
+- **API (documentación interactiva):** http://localhost:8000/docs
 
-   ```bash
-   cd api
-   pip install -r requirements-dev.txt
-   ```
+Detener el stack (conserva los datos de la base):
 
-3. Configurar variables de entorno (copiar de `.env.example`):
+```bash
+docker compose down
+```
 
-   ```bash
-   cp .env.example .env
-   ```
+## Desarrollo: correr solo la API (hot reload)
 
-4. Aplicar migraciones y levantar el servidor:
+Requiere el Postgres de docker-compose arriba. El default de `DATABASE_URL` apunta a `localhost:5432`.
 
-   ```bash
-   alembic upgrade head
-   uvicorn app.main:app --reload
-   ```
+```bash
+cd api
+pip install -r requirements-dev.txt
+alembic upgrade head
+uvicorn app.main:app --reload
+```
 
-La API queda disponible en `http://localhost:8000` y su documentación interactiva en `http://localhost:8000/docs`.
+Variables de entorno disponibles en `.env.example` (raíz) y `api/.env.example`.
 
 ## Endpoints de la API
 
