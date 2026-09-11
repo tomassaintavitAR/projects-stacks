@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f6f8;
+  color: #1f2328;
+}
+
+header {
+  background-color: #24292f;
+  color: #ffffff;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.view-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.view-header h2,
+.view-header h3 {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+form input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+button {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background-color: #f6f8fa;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background-color: #eaeef2;
+}
+
+button.danger {
+  color: #b42318;
+  border-color: #f4c7c3;
+  background-color: #fff5f4;
+}
+
+button.danger:hover {
+  background-color: #ffe3e1;
+}
+
+button[type="submit"] {
+  background-color: #1f883d;
+  border-color: #1f883d;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #1a7f37;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eaeef2;
+}
+
+th {
+  background-color: #f6f8fa;
+  font-size: 0.85rem;
+}
+
+td a {
+  color: #0969da;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+thead tr th:last-child {
+  text-align: right;
+}
+
+td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.error {
+  color: #b42318;
+  background-color: #fff5f4;
+  border: 1px solid #f4c7c3;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+.empty {
+  color: #59636e;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+}
+
+#back-button {
+  margin-bottom: 1rem;
+}

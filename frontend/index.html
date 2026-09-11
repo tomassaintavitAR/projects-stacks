@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Stacks</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Project Stacks</h1>
+  </header>
+
+  <main>
+    <section id="projects-view">
+      <div class="view-header">
+        <h2>Todos los proyectos</h2>
+        <form id="create-project-form">
+          <input type="text" id="new-project-name" placeholder="Nombre del proyecto" required maxlength="200">
+          <button type="submit">Crear proyecto</button>
+        </form>
+      </div>
+      <p id="projects-error" class="error" hidden></p>
+      <p id="projects-empty" class="empty" hidden>No hay proyectos todavía.</p>
+      <table id="projects-table" hidden>
+        <thead>
+          <tr><th>Nombre</th><th>Creado</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="projects-body"></tbody>
+      </table>
+    </section>
+
+    <section id="project-detail-view" hidden>
+      <button id="back-button" type="button">&larr; Volver a proyectos</button>
+      <h2 id="detail-title"></h2>
+      <div class="view-header">
+        <h3>Tecnologías</h3>
+        <form id="create-tech-form">
+          <input type="text" id="new-tech-name" placeholder="Nombre de la tecnología" required maxlength="200">
+          <button type="submit">Agregar tecnología</button>
+        </form>
+      </div>
+      <p id="detail-error" class="error" hidden></p>
+      <p id="techs-empty" class="empty" hidden>Este proyecto no tiene tecnologías.</p>
+      <table id="techs-table" hidden>
+        <thead>
+          <tr><th>Nombre</th><th>Creado</th><th>Acciones</th></tr>
+        </thead>
+        <tbody id="techs-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
