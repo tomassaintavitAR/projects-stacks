@@ -59,6 +59,8 @@ This document tracks the current state of the project. It is updated by the AI a
 |-----|-------|--------|------|
 | ADR-001 | Arquitectura de 2 servicios: `frontend` (SPA estática) + `api` (FastAPI REST) | Accepted | 2026-09-11 |
 | ADR-002 | SQLAlchemy (sync) + Alembic para el acceso y las migraciones a PostgreSQL | Accepted | 2026-09-11 |
+
+Nota ADR-002: `Settings` normaliza `DATABASE_URL` forzando siempre el driver psycopg v3 (`postgresql+psycopg://`). Así el connection string raw del pooler de Supabase (`postgresql://...`) funciona tanto en la API como en Alembic sin depender de psycopg2.
 | ADR-003 | Ejecución local con docker-compose: `db` + `api` + `frontend` | Accepted | 2026-09-11 |
 | ADR-004 | Estrategia de branches: `desarrollo` → `homologacion` → `production` | Accepted | 2026-09-11 |
 
