@@ -32,7 +32,7 @@ This document tracks the current state of the project. It is updated by the AI a
 
 ## In Progress
 
-- [ ] Nada en curso actualmente.
+- [ ] Deploy de staging desplegando: API en Render (`https://projects-stacks.onrender.com`) levantada; SPA en Vercel y CI/CD por conectar — Priority: High
 
 ## Planned
 
@@ -63,6 +63,9 @@ This document tracks the current state of the project. It is updated by the AI a
 Nota ADR-002: `Settings` normaliza `DATABASE_URL` forzando siempre el driver psycopg v3 (`postgresql+psycopg://`). Así el connection string raw del pooler de Supabase (`postgresql://...`) funciona tanto en la API como en Alembic sin depender de psycopg2.
 | ADR-003 | Ejecución local con docker-compose: `db` + `api` + `frontend` | Accepted | 2026-09-11 |
 | ADR-004 | Estrategia de branches: `desarrollo` → `homologacion` → `production` | Accepted | 2026-09-11 |
+| ADR-005 | Build step en Vercel (`frontend/scripts/generate-config.mjs`) genera `js/config.js` desde la env `API_BASE_URL` | Accepted | 2026-09-11 |
+
+Nota ADR-005: el `config.js` commiteado conserva el default local (`http://localhost:8000`) para docker-compose; en cada deploy, Vercel lo regenera con la URL del entorno correspondiente.
 
 ---
 
